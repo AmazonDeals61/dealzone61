@@ -3,69 +3,115 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>DealZone61 - Tägliche Amazon-Schnäppchen</title>
+  <title>DealZone61 - Beste Amazon Schnäppchen</title>
   <style>
-    body { font-family: Arial, sans-serif; background-color: #f5f5f5; margin: 0; padding: 0; }
-    header { background-color: #232f3e; color: white; padding: 20px; text-align: center; }
-    .container { padding: 20px; max-width: 1000px; margin: auto; }
-    .deal { background-color: white; padding: 15px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: flex; gap: 20px; align-items: center; }
-    .deal img { max-width: 150px; border-radius: 8px; }
-    .deal-content { flex: 1; }
-    .deal-content h3 { margin-top: 0; font-size: 1.2em; }
-    .deal-content p { margin: 10px 0; }
-    .deal-content a { background-color: #ffa41c; color: black; padding: 10px 15px; text-decoration: none; border-radius: 5px; display: inline-block; font-weight: bold; }
-    footer { background-color: #ddd; padding: 20px; text-align: center; font-size: 14px; margin-top: 40px; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f2f2f2; margin: 0; padding: 0; }
+    header { background-color: #1a1a1a; color: white; padding: 20px; text-align: center; }
+    header img { width: 80px; margin-bottom: 10px; }
+    header h1 { margin: 10px 0 5px; font-size: 2em; }
+    .search-box { text-align: center; margin: 20px; }
+    .search-box input[type="text"] {
+      width: 60%; padding: 10px; font-size: 1em; border-radius: 5px; border: 1px solid #ccc;
+    }
+    .container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 30px; max-width: 1200px; margin: auto; }
+    .product-card { background-color: white; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s ease; }
+    .product-card:hover { transform: translateY(-5px); }
+    .product-card img { width: 100%; height: auto; }
+    .product-info { padding: 15px; }
+    .product-info h3 { margin-top: 0; font-size: 1.2em; }
+    .product-info p { font-size: 0.95em; margin: 10px 0 15px; color: #333; }
+    .product-info a { background-color: #ffa41c; color: black; padding: 10px 16px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block; }
+    footer { background-color: #eee; text-align: center; font-size: 14px; color: #555; padding: 30px 20px; margin-top: 40px; }
   </style>
+  <script>
+    function searchProducts() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const cards = document.querySelectorAll(".product-card");
+      cards.forEach(card => {
+        const title = card.querySelector("h3").innerText.toLowerCase();
+        const desc = card.querySelector("p").innerText.toLowerCase();
+        if (title.includes(input) || desc.includes(input)) {
+          card.style.display = "flex";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    }
+  </script>
 </head>
 <body>
 
 <header>
-  <h1>DealZone61</h1>
-  <p>Tägliche Top-Angebote von Amazon – für dich gesammelt</p>
+  <img src="https://i.imgur.com/MWACrZ4.png" alt="Logo">
+  <h1>🔥 DealZone61 – Amazon-Deals 🔥</h1>
+  <p>Neue Schnäppchen. Täglich. Direkt für dich gefunden.</p>
 </header>
 
+<div class="search-box">
+  <input type="text" id="searchInput" onkeyup="searchProducts()" placeholder="Produkte durchsuchen...">
+</div>
+
 <div class="container">
-  <!-- Deal 1 -->
-  <div class="deal">
-    <img src="puma_schwarz.jpg" alt="Puma Sneaker Schwarz">
-    <div class="deal-content">
-      <h3>PUMA Unisex Smash V2 Sneaker – Schwarz</h3>
-      <p>Stylisch & bequem – einer der meistverkauften Sneaker aktuell auf Amazon!</p>
-      <a href="https://amzn.to/3FU6OwY" target="_blank">Zum Deal</a>
+
+  <div class="product-card">
+    <img src="https://m.media-amazon.com/images/I/71e0dF5%2B8yL._AC_UX575_.jpg" alt="Top-Sneaker">
+    <div class="product-info">
+      <h3>Top-Sneaker auf Amazon</h3>
+      <p>Stylisch, bequem und reduziert – aktuell einer der Bestseller auf Amazon.</p>
+      <a href="https://amzn.to/3FU6OwY" target="_blank">Zum Angebot</a>
     </div>
   </div>
 
-  <!-- Deal 2 -->
-  <div class="deal">
-    <img src="puma_weiss.jpg" alt="Puma Sneaker Weiß">
-    <div class="deal-content">
-      <h3>PUMA Unisex Smash V2 L Sneaker – Weiß</h3>
-      <p>Sportlich & clean – perfekt für Alltag und Freizeit, gerade reduziert!</p>
+  <div class="product-card">
+    <img src="https://m.media-amazon.com/images/I/71TXQ6X9AjL._AC_UX575_.jpg" alt="Laufschuh">
+    <div class="product-info">
+      <h3>Laufschuh im Trend</h3>
+      <p>Beliebt bei Sportlern und im Alltag – dieser Schuh ist bequem und aktuell stark reduziert.</p>
       <a href="https://amzn.to/43V0H5x" target="_blank">Jetzt entdecken</a>
     </div>
   </div>
 
-  <!-- Deal 3 -->
-  <div class="deal">
-    <img src="leggings.jpg" alt="TNNZEET Leggings">
-    <div class="deal-content">
-      <h3>TNNZEET High Waist Leggings</h3>
-      <p>Super beliebt – weich, elastisch und ideal für Sport, Gym & Alltag.</p>
-      <a href="https://amzn.to/3YcPgCi" target="_blank">Ansehen</a>
+  <div class="product-card">
+    <img src="https://m.media-amazon.com/images/I/61qz5RfD3uL._AC_UX679_.jpg" alt="Leggings">
+    <div class="product-info">
+      <h3>Sport-Leggings Bestseller</h3>
+      <p>Diese bequeme Leggings ist ein Amazon-Dauerbrenner – ideal für Sport, Alltag und Yoga.</p>
+      <a href="https://amzn.to/3YcPgCi" target="_blank">Jetzt ansehen</a>
     </div>
   </div>
+
+  <div class="product-card">
+    <img src="https://m.media-amazon.com/images/I/71IJAi4GyZL._AC_SX679_.jpg" alt="Ergonomisches Kissen">
+    <div class="product-info">
+      <h3>Ergonomisches Kissen</h3>
+      <p>Ideal für Seiten- und Rückenschläfer. Bequem, orthopädisch & bei Amazon stark reduziert!</p>
+      <a href="https://amzn.to/42tkSWO" target="_blank">Zum Angebot</a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="https://m.media-amazon.com/images/I/71U1x5iQ9IL._AC_SX679_.jpg" alt="Mini-Soundbar">
+    <div class="product-info">
+      <h3>Mini-Soundbar für TV & PC</h3>
+      <p>Starker Klang für kleines Geld – Bestseller mit vielen positiven Bewertungen.</p>
+      <a href="https://amzn.to/3FXhGdl" target="_blank">Zum Angebot</a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="https://m.media-amazon.com/images/I/61a+zL2C2DL._AC_SX679_.jpg" alt="USB Feuerzeug">
+    <div class="product-info">
+      <h3>USB Wiederaufladbares Feuerzeug</h3>
+      <p>Winddicht, stylisch, elektrischer Lichtbogen – perfekt für Küche oder Outdoor.</p>
+      <a href="https://amzn.to/4i2z91s" target="_blank">Zum Angebot</a>
+    </div>
+  </div>
+
 </div>
 
 <footer>
-  <p><strong>Impressum</strong><br>
-  Elias Keskin<br>
-  Adresse auf Anfrage<br>
-  E-Mail: likeafish61@gmail.com</p>
-
-  <p><strong>Datenschutzerklärung</strong><br>
-  Diese Website verwendet Affiliate-Links. Beim Klick und Kauf erhalten wir ggf. eine Provision. Es werden keine personenbezogenen Daten gespeichert.</p>
-
-  <p>&copy; 2025 DealZone61</p>
+  <p><strong>Impressum:</strong> Elias Keskin | E-Mail: likeafish61@gmail.com | Adresse auf Anfrage<br>
+  Diese Website enthält Affiliate-Links. Es gelten die AGB von Amazon.</p>
 </footer>
 
 </body>
