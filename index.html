@@ -3,124 +3,120 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>DealZone61 – SHEIN & Amazon Deals</title>
+  <title>Aesthetic Girl Deals – DealZone61</title>
   <style>
-    body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; background: #f9f9f9; }
-    header { background: #111; color: white; padding: 20px; text-align: center; }
-    h1 { margin: 0; font-size: 2em; }
-    .search { text-align: right; padding: 10px 20px; }
-    .search input { padding: 8px; width: 250px; font-size: 1em; border: 1px solid #ccc; border-radius: 5px; }
-
-    .columns { display: flex; flex-wrap: wrap; }
-    .column {
-      flex: 1;
-      padding: 20px;
-      min-width: 300px;
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff0f6;
+      color: #333;
     }
 
-    .column h2 {
+    header {
+      background: linear-gradient(90deg, #ff69b4, #ffa6c9);
+      color: white;
+      padding: 30px 20px;
       text-align: center;
-      margin-bottom: 20px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2em;
+      letter-spacing: 1px;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 30px;
     }
 
     .product-card {
       background: white;
-      border-radius: 10px;
-      padding: 15px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      transition: transform 0.2s ease;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      width: 280px;
+      text-align: center;
+      transition: transform 0.3s ease;
     }
 
     .product-card:hover {
-      transform: scale(1.02);
+      transform: scale(1.03);
     }
 
-    .product-info h3 { margin: 0 0 10px; font-size: 1.1em; }
-    .product-info p { font-size: 0.95em; color: #444; }
-    .product-info a {
+    .product-card h3 {
+      color: #cc2b5e;
+      margin-bottom: 10px;
+    }
+
+    .product-card p {
+      font-size: 0.95em;
+      color: #555;
+    }
+
+    .product-card a {
       display: inline-block;
-      margin-top: 10px;
-      padding: 8px 12px;
-      background: #ffa41c;
-      color: black;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #ff69b4;
+      color: white;
       text-decoration: none;
-      border-radius: 5px;
+      border-radius: 8px;
       font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .product-card a:hover {
+      background: #ff85c1;
     }
 
     footer {
-      background: #eee;
+      background: #ffe6f0;
       text-align: center;
       padding: 20px;
       font-size: 0.9em;
-      color: #555;
+      color: #444;
       margin-top: 40px;
     }
   </style>
-  <script>
-    function searchProducts() {
-      const input = document.getElementById("searchInput").value.toLowerCase();
-      const cards = document.querySelectorAll(".amazon .product-card");
-      cards.forEach(card => {
-        const text = card.innerText.toLowerCase();
-        card.style.display = text.includes(input) ? "block" : "none";
-      });
-    }
-  </script>
 </head>
 <body>
 
 <header>
-  <h1>🔥 DealZone61 – SHEIN & Amazon Deals 🔥</h1>
+  <h1>✨ Aesthetic Girl Must-Haves ✨</h1>
+  <p>Dein stilvoller Look beginnt hier</p>
 </header>
 
-<div class="search">
-  <input type="text" id="searchInput" onkeyup="searchProducts()" placeholder="Angebote durchsuchen...">
-</div>
+<div class="container">
 
-<div class="columns">
-
-  <!-- SHEIN Produkte -->
-  <div class="column shein">
-    <h2>SHEIN Deals</h2>
-
-    <div class="product-card"><div class="product-info"><h3>SHEIN Kleid Sommer</h3><p>Leichtes Sommerkleid mit floralem Muster – ideal für Urlaub & Alltag.</p><a href="#">Zum Angebot</a></div></div>
-    <div class="product-card"><div class="product-info"><h3>SHEIN Crop Top 2er Set</h3><p>Stretch & Style in einem – perfekt für Sport & Freizeit.</p><a href="#">Jetzt ansehen</a></div></div>
-    <div class="product-card"><div class="product-info"><h3>SHEIN Trainingsanzug Damen</h3><p>Komfort trifft Style – atmungsaktiv & figurbetont.</p><a href="#">Jetzt entdecken</a></div></div>
+  <div class="product-card">
+    <h3>Goldene Creolen</h3>
+    <p>Elegant & trendy – für deinen perfekten Aesthetic-Girl-Style.</p>
+    <a href="https://amzn.to/42oCmT2" target="_blank">Zum Produkt</a>
   </div>
 
-  <!-- Amazon Produkte -->
-  <div class="column amazon">
-    <h2>Amazon Deals</h2>
+  <div class="product-card">
+    <h3>Basic Crop Top</h3>
+    <p>Weiches, figurbetontes Top – die perfekte Grundlage für deinen Look.</p>
+    <a href="https://amzn.to/42t6AUO" target="_blank">Jetzt entdecken</a>
+  </div>
 
-    <div class="product-card"><div class="product-info"><h3>Top-Sneaker auf Amazon</h3><p>Stylisch, bequem und reduziert – aktuell einer der Bestseller auf Amazon.</p><a href="https://amzn.to/3FU6OwY" target="_blank">Zum Angebot</a></div></div>
-    <div class="product-card"><div class="product-info"><h3>Laufschuh im Trend</h3><p>Beliebt bei Sportlern und im Alltag – dieser Schuh ist bequem und aktuell stark reduziert.</p><a href="https://amzn.to/43V0H5x" target="_blank">Jetzt entdecken</a></div></div>
-    <div class="product-card"><div class="product-info"><h3>Sport-Leggings Bestseller</h3><p>Diese bequeme Leggings ist ein Amazon-Dauerbrenner – ideal für Sport, Alltag und Yoga.</p><a href="https://amzn.to/3YcPgCi" target="_blank">Jetzt ansehen</a></div></div>
-    <div class="product-card"><div class="product-info"><h3>Basic Herren T-Shirt</h3><p>Ein echter Allrounder – bequem, schlicht und ideal für Alltag, Sport oder als Unterziehshirt.</p><a href="https://amzn.to/42tkSWO" target="_blank">Zum Angebot</a></div></div>
-    <div class="product-card"><div class="product-info"><h3>Multipack Boxershorts</h3><p>Mehrere Farben, elastisch, top bewertet – bequem für jeden Tag & jede Bewegung.</p><a href="https://amzn.to/3FXhGdl" target="_blank">Jetzt ansehen</a></div></div>
-    <div class="product-card"><div class="product-info"><h3>Calvin Klein Boxershort</h3><p>Premium-Marke mit Komfort – stylisch, sportlich & hochwertig verarbeitet.</p><a href="https://amzn.to/4i2z91s" target="_blank">Zum Angebot</a></div></div>
-    <div class="product-card"><div class="product-info"><h3>Beliebteste Latschen</h3><p>Ultraleicht, bequem & perfekt für Sommer oder Zuhause – oft ausverkauft!</p><a href="https://amzn.to/4iYY5rS" target="_blank">Jetzt sichern</a></div></div>
-    <div class="product-card"><div class="product-info"><h3>Socken Bestseller – jetzt -70%</h3><p>Kuschelig weich, atmungsaktiv und aktuell stark reduziert – Top-Deal!</p><a href="https://amzn.to/4lowLFc" target="_blank">Zum Angebot</a></div></div>
-    <div class="product-card"><div class="product-info"><h3>PUMA Quarter Socken –33%</h3><p>Klassisch, sportlich, ideal für Alltag & Sport. Aktuell im 5er Pack reduziert.</p><a href="https://amzn.to/449yZll" target="_blank">Jetzt ansehen</a></div></div>
-    <div class="product-card"><div class="product-info"><h3>Levi’s 501 Jeans –50%</h3><p>Kult-Jeans im klassischen Schnitt. Robust & bequem – jetzt zum halben Preis.</p><a href="https://amzn.to/3RHg61D" target="_blank">Jetzt zuschlagen</a></div></div>
-    <div class="product-card"><div class="product-info"><h3>adidas Crew Socken –35%</h3><p>Gedämpft, bequem & hochwertig – ideal für Training & Alltag.</p><a href="https://amzn.to/4joOZEF" target="_blank">Zum Angebot</a></div></div>
-    <div class="product-card"><div class="product-info"><h3>PUMA Anzarun Lite Sneaker –28%</h3><p>Leichter, sportlicher Sneaker für Männer & Frauen – Bestseller mit Style.</p><a href="https://amzn.to/4i0MuqY" target="_blank">Jetzt entdecken</a></div></div>
-    <div class="product-card"><div class="product-info"><h3>adidas Socken –35%</h3><p>Robust, sportlich & atmungsaktiv – ideal für jedes Training.</p><a href="https://amzn.to/4lgEdSt" target="_blank">Jetzt ansehen</a></div></div>
-    <div class="product-card"><div class="product-info"><h3>Beliebtestes Nackenkissen</h3><p>Ergonomisch, stützend und bequem für Rücken- & Seitenschläfer – Bestseller für ca. 30 €.</p><a href="https://amzn.to/3EdecTq" target="_blank">Jetzt entdecken</a></div></div>
-    <div class="product-card"><div class="product-info"><h3>Damen Gym Top –20%</h3><p>Sportlich, eng anliegend & atmungsaktiv – perfekt fürs Fitnessstudio.</p><a href="https://amzn.to/3FViQ9l" target="_blank">Jetzt ansehen</a></div></div>
-    <div class="product-card"><div class="product-info"><h3>Nike Herren Socken –17%</h3><p>Bequem, langlebig und mit ikonischem Nike-Logo – stark reduziert.</p><a href="https://amzn.to/3R9aMUH" target="_blank">Zum Angebot</a></div></div>
-    <div class="product-card"><div class="product-info"><h3>Puma Herren Sportshirt –41%</h3><p>Leicht, schnelltrocknend und perfekt für Workouts oder Sommer.</p><a href="https://amzn.to/44eEGyq" target="_blank">Jetzt sichern</a></div></div>
-    <div class="product-card"><div class="product-info"><h3>Ross Camp Jogginghose –22%</h3><p>Weich, stylisch & sportlich – perfekt für Alltag oder Gym.</p><a href="https://amzn.to/3FYWtzM" target="_blank">Jetzt ansehen</a></div></div>
+  <div class="product-card">
+    <h3>Leder Henkeltasche</h3>
+    <p>Mittelgroß, elegant & vielseitig – passend zu jedem Outfit.</p>
+    <a href="https://amzn.to/42ncA1y" target="_blank">Jetzt shoppen</a>
   </div>
 
 </div>
 
 <footer>
   <p><strong>Impressum:</strong> Elias Keskin | E-Mail: likeafish61@gmail.com | Adresse auf Anfrage<br>
-  Diese Website enthält Affiliate-Links. Es gelten die AGB von Amazon und SHEIN.</p>
+  Diese Website enthält Affiliate-Links. Es gelten die AGB von Amazon.</p>
 </footer>
 
 </body>
 </html>
-
