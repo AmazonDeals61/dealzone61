@@ -26,6 +26,38 @@
       letter-spacing: 1px;
     }
 
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      padding: 10px 20px;
+      background: #ffe6f0;
+    }
+
+    .toolbar button, .toolbar input {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
+    .toolbar button {
+      background: #ff69b4;
+      color: white;
+    }
+
+    .toolbar button:hover {
+      background: #ff85c1;
+    }
+
+    .toolbar input {
+      background: white;
+      border: 1px solid #ccc;
+      min-width: 200px;
+    }
+
     .container {
       display: flex;
       flex-wrap: wrap;
@@ -83,48 +115,155 @@
       margin-top: 40px;
     }
   </style>
+  <script>
+    function filterCategory(category) {
+      const cards = document.querySelectorAll('.product-card');
+      cards.forEach(card => {
+        card.style.display = category === 'all' || card.dataset.category === category ? 'block' : 'none';
+      });
+    }
+
+    function searchProducts() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const cards = document.querySelectorAll(".product-card");
+      cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        card.style.display = text.includes(input) ? "block" : "none";
+      });
+    }
+  </script>
 </head>
 <body>
-
 <header>
-  <h1>✨ Aesthetic • Clean • Streetwear • Boho • Y2K ✨</h1>
-  <p>Deine schönsten Looks auf einen Klick 💅</p>
+  <h1>✨ DealZone61 – Aesthetic, Clean, Boho, Y2K & mehr ✨</h1>
 </header>
+
+<div class="toolbar">
+  <button onclick="filterCategory('all')">Alle</button>
+  <button onclick="filterCategory('aesthetic')">Aesthetic</button>
+  <button onclick="filterCategory('clean')">Clean Girl</button>
+  <button onclick="filterCategory('streetwear')">Streetwear</button>
+  <button onclick="filterCategory('boho')">Boho</button>
+  <button onclick="filterCategory('y2k')">Y2K</button>
+  <input type="text" id="searchInput" onkeyup="searchProducts()" placeholder="Angebote durchsuchen..." />
+</div>
 
 <div class="container">
 
-  <!-- Aesthetic & Clean Girl -->
-  <div class="product-card"><h3>Goldene Creolen</h3><p>Elegant & trendy – für deinen perfekten Aesthetic-Girl-Style.</p><a href="https://amzn.to/42oCmT2" target="_blank">Zum Produkt</a></div>
-  <div class="product-card"><h3>Basic Crop Top</h3><p>Weiches, figurbetontes Top – die perfekte Grundlage für deinen Look.</p><a href="https://amzn.to/42t6AUO" target="_blank">Jetzt entdecken</a></div>
-  <div class="product-card"><h3>Leder Henkeltasche</h3><p>Mittelgroß, elegant & vielseitig – passend zu jedem Outfit.</p><a href="https://amzn.to/42ncA1y" target="_blank">Jetzt shoppen</a></div>
-  <div class="product-card"><h3>Puma Damen Sneaker</h3><p>Minimalistisch & bequem – perfekt für den Clean Girl Look.</p><a href="https://amzn.to/42bswFp" target="_blank">Zum Style</a></div>
+  <!-- Aesthetic -->
+  <div class="product-card" data-category="aesthetic">
+    <h3>Goldene Creolen</h3>
+    <p>Elegant & trendy – für deinen perfekten Aesthetic-Girl-Style.</p>
+    <a href="https://amzn.to/42oCmT2" target="_blank">Zum Produkt</a>
+  </div>
+  <div class="product-card" data-category="aesthetic">
+    <h3>Basic Crop Top</h3>
+    <p>Weiches, figurbetontes Top – die perfekte Grundlage für deinen Look.</p>
+    <a href="https://amzn.to/42t6AUO" target="_blank">Jetzt entdecken</a>
+  </div>
+  <div class="product-card" data-category="aesthetic">
+    <h3>Leder Henkeltasche</h3>
+    <p>Mittelgroß, elegant & vielseitig – passend zu jedem Outfit.</p>
+    <a href="https://amzn.to/42ncA1y" target="_blank">Jetzt shoppen</a>
+  </div>
+  <!-- Clean Girl -->
+  <div class="product-card" data-category="clean">
+    <h3>Puma Damen Sneaker</h3>
+    <p>Minimalistisch & bequem – perfekt für den Clean Girl Look.</p>
+    <a href="https://amzn.to/42bswFp" target="_blank">Zum Style</a>
+  </div>
+  <div class="product-card" data-category="clean">
+    <h3>Clean Girl Crop Top</h3>
+    <p>Schlicht, soft & feminin – clean & classy für jeden Tag.</p>
+    <a href="https://amzn.to/4ja97e0" target="_blank">Jetzt entdecken</a>
+  </div>
+  <div class="product-card" data-category="clean">
+    <h3>Adidas Sneaker – Clean Girl</h3>
+    <p>Frisch & modern – der perfekte Sneaker für cleane Outfits.</p>
+    <a href="https://amzn.to/4jz3ztm" target="_blank">Zum Sneaker</a>
+  </div>
+  <div class="product-card" data-category="clean">
+    <h3>Umhängetasche – Clean Girl</h3>
+    <p>Elegant & alltagstauglich – rundet deinen minimalistischen Look ab.</p>
+    <a href="https://amzn.to/4jbEGEe" target="_blank">Jetzt shoppen</a>
+  </div>
+  <div class="product-card" data-category="clean">
+    <h3>Gold Armband – Clean Girl</h3>
+    <p>Fein & feminin – für deinen dezenten Luxus am Handgelenk.</p>
+    <a href="https://amzn.to/4jBWvw5" target="_blank">Zum Armband</a>
+  </div>
+  <div class="product-card" data-category="clean">
+    <h3>Wide Pants – Clean Girl</h3>
+    <p>Fließend, elegant & comfy – ideal für cleane Looks.</p>
+    <a href="https://amzn.to/3RNOF6s" target="_blank">Jetzt entdecken</a>
+  </div>
 
   <!-- Streetwear -->
-  <div class="product-card"><h3>Chunky Sneaker</h3><p>Streetwear-Vibe mit Statement-Sohle – comfy & cool.</p><a href="https://amzn.to/4jtHJao" target="_blank">Jetzt ansehen</a></div>
-  <div class="product-card"><h3>ONLY High-Waist Mom Jeans</h3><p>Weit & stylisch – ideal für den urbanen Oversized-Look.</p><a href="https://amzn.to/4jtHJao" target="_blank">Jetzt entdecken</a></div>
-  <div class="product-card"><h3>Oversized Hoodie mit Schmetterling</h3><p>Wohlfühlteil mit sanftem Print – cozy & cute in einem.</p><a href="https://amzn.to/4ia3iM8" target="_blank">Zum Hoodie</a></div>
+  <div class="product-card" data-category="streetwear">
+    <h3>Chunky Sneaker</h3>
+    <p>Streetwear-Vibe mit Statement-Sohle – comfy & cool.</p>
+    <a href="https://amzn.to/4jtHJao" target="_blank">Jetzt ansehen</a>
+  </div>
+  <div class="product-card" data-category="streetwear">
+    <h3>ONLY High-Waist Mom Jeans</h3>
+    <p>Weit & stylisch – ideal für den urbanen Oversized-Look.</p>
+    <a href="https://amzn.to/4jtHJao" target="_blank">Jetzt entdecken</a>
+  </div>
+  <div class="product-card" data-category="streetwear">
+    <h3>Oversized Hoodie mit Schmetterling</h3>
+    <p>Wohlfühlteil mit sanftem Print – cozy & cute in einem.</p>
+    <a href="https://amzn.to/4ia3iM8" target="_blank">Zum Hoodie</a>
+  </div>
 
-  <!-- Boho Style -->
-  <div class="product-card"><h3>Boho-Kleid</h3><p>Luftig & verspielt – ideal für Sommer, Strand & Festival.</p><a href="https://amzn.to/4cuPKtD" target="_blank">Jetzt ansehen</a></div>
-  <div class="product-card"><h3>Boho Umhängetasche</h3><p>Gewebt, süß & praktisch – rundet jedes Boho-Outfit ab.</p><a href="https://amzn.to/4j5VGvj" target="_blank">Jetzt entdecken</a></div>
-  <div class="product-card"><h3>Holzperlen Armband</h3><p>Natur pur – perfekt für den lässigen Boho-Look.</p><a href="https://amzn.to/42DM6sW" target="_blank">Zum Armband</a></div>
-  <div class="product-card"><h3>Boho Sandaletten</h3><p>Bequem & elegant – für Stadt, Strand oder Sommerparty.</p><a href="https://amzn.to/4csXUT8" target="_blank">Jetzt shoppen</a></div>
+  <!-- Boho -->
+  <div class="product-card" data-category="boho">
+    <h3>Boho-Kleid</h3>
+    <p>Luftig & verspielt – ideal für Sommer, Strand & Festival.</p>
+    <a href="https://amzn.to/4cuPKtD" target="_blank">Jetzt ansehen</a>
+  </div>
+  <div class="product-card" data-category="boho">
+    <h3>Boho Umhängetasche</h3>
+    <p>Gewebt, süß & praktisch – rundet jedes Boho-Outfit ab.</p>
+    <a href="https://amzn.to/4j5VGvj" target="_blank">Jetzt entdecken</a>
+  </div>
+  <div class="product-card" data-category="boho">
+    <h3>Holzperlen Armband</h3>
+    <p>Natur pur – perfekt für den lässigen Boho-Look.</p>
+    <a href="https://amzn.to/42DM6sW" target="_blank">Zum Armband</a>
+  </div>
+  <div class="product-card" data-category="boho">
+    <h3>Boho Sandaletten</h3>
+    <p>Bequem & elegant – für Stadt, Strand oder Sommerparty.</p>
+    <a href="https://amzn.to/4csXUT8" target="_blank">Jetzt shoppen</a>
+  </div>
 
-  <!-- Y2K Style -->
-  <div class="product-card"><h3>Parachute Pants</h3><p>Baggy & edgy – für den ultimativen Y2K-Vibe.</p><a href="https://amzn.to/43MxMjU" target="_blank">Jetzt ansehen</a></div>
-  <div class="product-card"><h3>Y2K Sneaker</h3><p>Klobiger 2000er-Style – der perfekte Retro-Vibe für jedes Outfit.</p><a href="https://amzn.to/4ih2B3U" target="_blank">Zum Sneaker</a></div>
-  <div class="product-card"><h3>Y2K Hoodie</h3><p>Futuristisch, oversized & cozy – absolut im Trend.</p><a href="https://amzn.to/42L9GF2" target="_blank">Jetzt entdecken</a></div>
-  <div class="product-card"><h3>Y2K Sonnenbrille</h3><p>Schlank, shiny & super edgy – total im Hype!</p><a href="https://amzn.to/43NnGzh" target="_blank">Zur Brille</a></div>
-  <div class="product-card"><h3>Y2K Schmuck</h3><p>Glamour-Set für den ultimativen Throwback-Look.</p><a href="https://amzn.to/4cPNbm9" target="_blank">Jetzt shoppen</a></div>
-
-  <!-- Neue Clean Girl Produkte -->
-  <div class="product-card"><h3>Clean Girl Crop Top</h3><p>Schlicht, soft & feminin – clean & classy für jeden Tag.</p><a href="https://amzn.to/4ja97e0" target="_blank">Jetzt entdecken</a></div>
-  <div class="product-card"><h3>Adidas Sneaker – Clean Girl</h3><p>Frisch & modern – der perfekte Sneaker für cleane Outfits.</p><a href="https://amzn.to/4jz3ztm" target="_blank">Zum Sneaker</a></div>
-  <div class="product-card"><h3>Umhängetasche – Clean Girl</h3><p>Elegant & alltagstauglich – rundet deinen minimalistischen Look ab.</p><a href="https://amzn.to/4jbEGEe" target="_blank">Jetzt shoppen</a></div>
-  <div class="product-card"><h3>Gold Armband – Clean Girl</h3><p>Fein & feminin – für deinen dezenten Luxus am Handgelenk.</p><a href="https://amzn.to/4jBWvw5" target="_blank">Zum Armband</a></div>
-  <div class="product-card"><h3>Wide Pants – Clean Girl</h3><p>Fließend, elegant & comfy – ideal für cleane Looks.</p><a href="https://amzn.to/3RNOF6s" target="_blank">Jetzt entdecken</a></div>
-
-</div>
+  <!-- Y2K -->
+  <div class="product-card" data-category="y2k">
+    <h3>Parachute Pants</h3>
+    <p>Baggy & edgy – für den ultimativen Y2K-Vibe.</p>
+    <a href="https://amzn.to/43MxMjU" target="_blank">Jetzt ansehen</a>
+  </div>
+  <div class="product-card" data-category="y2k">
+    <h3>Y2K Sneaker</h3>
+    <p>Klobiger 2000er-Style – der perfekte Retro-Vibe für jedes Outfit.</p>
+    <a href="https://amzn.to/4ih2B3U" target="_blank">Zum Sneaker</a>
+  </div>
+  <div class="product-card" data-category="y2k">
+    <h3>Y2K Hoodie</h3>
+    <p>Futuristisch, oversized & cozy – absolut im Trend.</p>
+    <a href="https://amzn.to/42L9GF2" target="_blank">Jetzt entdecken</a>
+  </div>
+  <div class="product-card" data-category="y2k">
+    <h3>Y2K Sonnenbrille</h3>
+    <p>Schlank, shiny & super edgy – total im Hype!</p>
+    <a href="https://amzn.to/43NnGzh" target="_blank">Zur Brille</a>
+  </div>
+  <div class="product-card" data-category="y2k">
+    <h3>Y2K Schmuck</h3>
+    <p>Glamour-Set für den ultimativen Throwback-Look.</p>
+    <a href="https://amzn.to/4cPNbm9" target="_blank">Jetzt shoppen</a>
+  </div>
+</div> <!-- Ende von .container -->
 
 <footer>
   <p><strong>Impressum:</strong> Elias Keskin | E-Mail: likeafish61@gmail.com | Adresse auf Anfrage<br>
@@ -133,3 +272,4 @@
 
 </body>
 </html>
+
