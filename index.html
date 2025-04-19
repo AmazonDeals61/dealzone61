@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>DealZone61 – Girl Looks</title>
+  <title>DealZone61 – Styles entdecken</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -12,53 +12,16 @@
       background: #fff0f6;
       color: #333;
     }
-
     header {
       background: linear-gradient(90deg, #ff69b4, #ffa6c9);
       color: white;
       padding: 30px 20px;
       text-align: center;
     }
+    h1 { margin: 0; font-size: 2em; }
+    h2 { margin-top: 40px; text-align: center; }
 
-    h1 {
-      margin: 0;
-      font-size: 2em;
-      letter-spacing: 1px;
-    }
-
-    .toolbar {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      padding: 10px 20px;
-      background: #ffe6f0;
-    }
-
-    .toolbar button, .toolbar input {
-      padding: 10px 15px;
-      border: none;
-      border-radius: 8px;
-      font-size: 1em;
-      cursor: pointer;
-    }
-
-    .toolbar button {
-      background: #ff69b4;
-      color: white;
-    }
-
-    .toolbar button:hover {
-      background: #ff85c1;
-    }
-
-    .toolbar input {
-      background: white;
-      border: 1px solid #ccc;
-      min-width: 200px;
-    }
-
-    .container {
+    .teasers, .container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -76,19 +39,10 @@
       transition: transform 0.3s ease;
     }
 
-    .product-card:hover {
-      transform: scale(1.03);
-    }
+    .product-card:hover { transform: scale(1.03); }
 
-    .product-card h3 {
-      color: #cc2b5e;
-      margin-bottom: 10px;
-    }
-
-    .product-card p {
-      font-size: 0.95em;
-      color: #555;
-    }
+    .product-card h3 { color: #cc2b5e; }
+    .product-card p { font-size: 0.95em; color: #555; }
 
     .product-card a {
       display: inline-block;
@@ -99,12 +53,9 @@
       text-decoration: none;
       border-radius: 8px;
       font-weight: bold;
-      transition: background 0.3s ease;
     }
 
-    .product-card a:hover {
-      background: #ff85c1;
-    }
+    .product-card a:hover { background: #ff85c1; }
 
     footer {
       background: #ffe6f0;
@@ -115,434 +66,484 @@
       margin-top: 40px;
     }
   </style>
-  <script>
-    function filterCategory(category) {
-      const cards = document.querySelectorAll('.product-card');
-      cards.forEach(card => {
-        card.style.display = category === 'all' || card.dataset.category === category ? 'block' : 'none';
-      });
-    }
-
-    function searchProducts() {
-      const input = document.getElementById("searchInput").value.toLowerCase();
-      const cards = document.querySelectorAll(".product-card");
-      cards.forEach(card => {
-        const text = card.innerText.toLowerCase();
-        card.style.display = text.includes(input) ? "block" : "none";
-      });
-    }
-  </script>
 </head>
 <body>
+
 <header>
-  <h1>✨ DealZone61 – Aesthetic, Clean, Boho, Y2K & mehr ✨</h1>
+  <h1>✨ DealZone61 – Deine Fashion Styles ✨</h1>
 </header>
 
-<div class="toolbar">
-  <button onclick="filterCategory('all')">Alle</button>
-  <button onclick="filterCategory('aesthetic')">Aesthetic</button>
-  <button onclick="filterCategory('clean')">Clean Girl</button>
-  <button onclick="filterCategory('streetwear')">Streetwear</button>
-  <button onclick="filterCategory('boho')">Boho</button>
-  <button onclick="filterCategory('y2k')">Y2K</button>
-  <button onclick="filterCategory('casual')">Casual</button>
-  <button onclick="filterCategory('gothic')">Gothic</button>
-  <button onclick="filterCategory('doll')">Doll Look</button>
-  <button onclick="filterCategory('cowgirl')">Coastal Cowgirl</button>
-  <button onclick="filterCategory('ballerina')">Ballerina Style</button>
-  <button onclick="filterCategory('blackchic')">All Black Chic</button>
-  <button onclick="filterCategory('french')">French Chic</button>
-
-  <input type="text" id="searchInput" onkeyup="searchProducts()" placeholder="Angebote durchsuchen..." />
+<h2>🌟 Kategorien entdecken</h2>
+<div class="teasers">
+  <div class="product-card">
+    <h3>Clean Girl</h3>
+    <p>Minimalistisch, weiß & classy – jetzt den Trend leben!</p>
+    <a href="#clean">Mehr anzeigen</a>
+  </div>
+  <div class="product-card">
+    <h3>Y2K</h3>
+    <p>Bold, retro & shiny – alles für dein Throwback-Outfit.</p>
+    <a href="#y2k">Mehr anzeigen</a>
+  </div>
+  <div class="product-card">
+    <h3>Boho</h3>
+    <p>Lässig, luftig & verspielt – perfekte Looks für freie Geister.</p>
+    <a href="#boho">Mehr anzeigen</a>
+  </div>
+  <div class="product-card">
+    <h3>Gothic</h3>
+    <p>Dunkel, romantisch & mystisch – für Queens of Night.</p>
+    <a href="#gothic">Mehr anzeigen</a>
+  </div>
+  <div class="product-card">
+    <h3>Doll Look</h3>
+    <p>Süß, verspielt & girly – für den perfekten kawaii Style.</p>
+    <a href="#doll">Mehr anzeigen</a>
+  </div>
 </div>
-
+<h2 id="clean">🧼 Clean Girl Style</h2>
 <div class="container">
 
-  <!-- Aesthetic -->
-  <div class="product-card" data-category="aesthetic">
-    <h3>Goldene Creolen</h3>
-    <p>Elegant & trendy – für deinen perfekten Aesthetic-Girl-Style.</p>
-    <a href="https://amzn.to/42oCmT2" target="_blank">Zum Produkt</a>
-  </div>
-  <div class="product-card" data-category="aesthetic">
-    <h3>Basic Crop Top</h3>
-    <p>Weiches, figurbetontes Top – die perfekte Grundlage für deinen Look.</p>
-    <a href="https://amzn.to/42t6AUO" target="_blank">Jetzt entdecken</a>
-  </div>
-  <div class="product-card" data-category="aesthetic">
-    <h3>Leder Henkeltasche</h3>
-    <p>Mittelgroß, elegant & vielseitig – passend zu jedem Outfit.</p>
-    <a href="https://amzn.to/42ncA1y" target="_blank">Jetzt shoppen</a>
-  </div>
-  <div class="product-card" data-category="aesthetic">
-    <h3>G-Star Wide Leg Jeans (Beige)</h3>
-    <p>Weit geschnitten, elegant und topmodern – für deinen Aesthetic Vibe.</p>
-    <a href="https://amzn.to/4ifd1AY" target="_blank">Jetzt entdecken</a>
-  </div>
-  <div class="product-card" data-category="aesthetic">
-    <h3>White Crop Top</h3>
-    <p>Clean, figurbetont & perfekt für deinen neutralen Insta-Look.</p>
-    <a href="https://amzn.to/42f52z2" target="_blank">Zum Crop Top</a>
-  </div>
-  <div class="product-card" data-category="aesthetic">
-    <h3>Weiße Ballerinas</h3>
-    <p>Schlicht, schick & comfy – passen perfekt zu Wide Pants & Kleidern.</p>
-    <a href="https://amzn.to/4ikg62J" target="_blank">Jetzt ansehen</a>
-  </div>
-  <div class="product-card" data-category="aesthetic">
-    <h3>Umhängetasche Beige</h3>
-    <p>Neutral & zeitlos – für cleane Looks und feminine Outfits.</p>
-    <a href="https://amzn.to/43VUxlC" target="_blank">Zur Tasche</a>
-  </div>
-  <div class="product-card" data-category="aesthetic">
-    <h3>Goldkette</h3>
-    <p>Filigran, golden & elegant – dein minimalistisches Statement-Piece.</p>
-    <a href="https://amzn.to/42wJTza" target="_blank">Jetzt shoppen</a>
-  </div>
-  <!-- Clean Girl -->
-  <div class="product-card" data-category="clean">
-    <h3>Puma Damen Sneaker</h3>
-    <p>Minimalistisch & bequem – perfekt für den Clean Girl Look.</p>
-    <a href="https://amzn.to/42bswFp" target="_blank">Zum Style</a>
-  </div>
   <div class="product-card" data-category="clean">
     <h3>Clean Girl Crop Top</h3>
     <p>Schlicht, soft & feminin – clean & classy für jeden Tag.</p>
     <a href="https://amzn.to/4ja97e0" target="_blank">Jetzt entdecken</a>
   </div>
+
   <div class="product-card" data-category="clean">
     <h3>Adidas Sneaker – Clean Girl</h3>
     <p>Frisch & modern – der perfekte Sneaker für cleane Outfits.</p>
     <a href="https://amzn.to/4jz3ztm" target="_blank">Zum Sneaker</a>
   </div>
+
   <div class="product-card" data-category="clean">
     <h3>Umhängetasche – Clean Girl</h3>
     <p>Elegant & alltagstauglich – rundet deinen minimalistischen Look ab.</p>
     <a href="https://amzn.to/4jbEGEe" target="_blank">Jetzt shoppen</a>
   </div>
+
   <div class="product-card" data-category="clean">
     <h3>Gold Armband – Clean Girl</h3>
     <p>Fein & feminin – für deinen dezenten Luxus am Handgelenk.</p>
     <a href="https://amzn.to/4jBWvw5" target="_blank">Zum Armband</a>
   </div>
+
   <div class="product-card" data-category="clean">
     <h3>Wide Pants – Clean Girl</h3>
     <p>Fließend, elegant & comfy – ideal für cleane Looks.</p>
     <a href="https://amzn.to/3RNOF6s" target="_blank">Jetzt entdecken</a>
   </div>
-  <!-- Clean Girl – neue Produkte -->
+
+  <div class="product-card" data-category="clean">
+    <h3>Puma Damen Sneaker</h3>
+    <p>Minimalistisch & bequem – perfekt für den Clean Girl Look.</p>
+    <a href="https://amzn.to/42bswFp" target="_blank">Zum Style</a>
+  </div>
+
   <div class="product-card" data-category="clean">
     <h3>Clean Girl Cardigan</h3>
     <p>Weich, oversize & gemütlich – ideal für Layered Looks.</p>
     <a href="https://amzn.to/4lD9wHf" target="_blank">Jetzt entdecken</a>
   </div>
+
   <div class="product-card" data-category="clean">
     <h3>Tennisrock Weiß – Clean Girl</h3>
     <p>Sportlich & sweet – das Signature-Piece für cleane Outfits.</p>
     <a href="https://amzn.to/4cDFFut" target="_blank">Jetzt ansehen</a>
   </div>
+
   <div class="product-card" data-category="clean">
     <h3>PUMA Chunky Sneaker – Clean Girl</h3>
     <p>Bold & comfy – clean, weiß & ready für jeden Fit.</p>
     <a href="https://amzn.to/3Y6aWA4" target="_blank">Zum Sneaker</a>
   </div>
-  <div class="product-card" data-category="clean">
-    <h3>Weiße Tasche – Clean Girl</h3>
-    <p>Minimalistisch, stylisch & clean – rundet jedes Outfit ab.</p>
-    <a href="https://amzn.to/4jkTX5J" target="_blank">Jetzt shoppen</a>
-  </div>
+
   <div class="product-card" data-category="clean">
     <h3>Blumen-Haarklammern – Clean Girl</h3>
     <p>Pastellfarben, floral & feminin – dein kleines Detail mit großer Wirkung.</p>
     <a href="https://amzn.to/3GfhbLQ" target="_blank">Jetzt entdecken</a>
   </div>
 
-  <!-- Streetwear -->
-  <div class="product-card" data-category="streetwear">
-    <h3>Chunky Sneaker</h3>
-    <p>Streetwear-Vibe mit Statement-Sohle – comfy & cool.</p>
-    <a href="https://amzn.to/4jtHJao" target="_blank">Jetzt ansehen</a>
-  </div>
-  <div class="product-card" data-category="streetwear">
-    <h3>ONLY High-Waist Mom Jeans</h3>
-    <p>Weit & stylisch – ideal für den urbanen Oversized-Look.</p>
-    <a href="https://amzn.to/4jtHJao" target="_blank">Jetzt entdecken</a>
-  </div>
-  <div class="product-card" data-category="streetwear">
-    <h3>Oversized Hoodie mit Schmetterling</h3>
-    <p>Wohlfühlteil mit sanftem Print – cozy & cute in einem.</p>
-    <a href="https://amzn.to/4ia3iM8" target="_blank">Zum Hoodie</a>
-  </div>
+</div>
+<h2 id="y2k">💿 Y2K Style</h2>
+<div class="container">
 
-  <!-- Boho -->
-  <div class="product-card" data-category="boho">
-    <h3>Boho-Kleid</h3>
-    <p>Luftig & verspielt – ideal für Sommer, Strand & Festival.</p>
-    <a href="https://amzn.to/4cuPKtD" target="_blank">Jetzt ansehen</a>
-  </div>
-  <div class="product-card" data-category="boho">
-    <h3>Boho Umhängetasche</h3>
-    <p>Gewebt, süß & praktisch – rundet jedes Boho-Outfit ab.</p>
-    <a href="https://amzn.to/4j5VGvj" target="_blank">Jetzt entdecken</a>
-  </div>
-  <div class="product-card" data-category="boho">
-    <h3>Holzperlen Armband</h3>
-    <p>Natur pur – perfekt für den lässigen Boho-Look.</p>
-    <a href="https://amzn.to/42DM6sW" target="_blank">Zum Armband</a>
-  </div>
-  <div class="product-card" data-category="boho">
-    <h3>Boho Sandaletten</h3>
-    <p>Bequem & elegant – für Stadt, Strand oder Sommerparty.</p>
-    <a href="https://amzn.to/4csXUT8" target="_blank">Jetzt shoppen</a>
-  </div>
-  <!-- Y2K -->
   <div class="product-card" data-category="y2k">
-    <h3>Parachute Pants</h3>
+    <h3>Parachute Pants Y2K</h3>
     <p>Baggy & edgy – für den ultimativen Y2K-Vibe.</p>
     <a href="https://amzn.to/43MxMjU" target="_blank">Jetzt ansehen</a>
   </div>
+
   <div class="product-card" data-category="y2k">
     <h3>Y2K Sneaker</h3>
     <p>Klobiger 2000er-Style – der perfekte Retro-Vibe für jedes Outfit.</p>
     <a href="https://amzn.to/4ih2B3U" target="_blank">Zum Sneaker</a>
   </div>
+
   <div class="product-card" data-category="y2k">
     <h3>Y2K Hoodie</h3>
     <p>Futuristisch, oversized & cozy – absolut im Trend.</p>
     <a href="https://amzn.to/42L9GF2" target="_blank">Jetzt entdecken</a>
   </div>
+
   <div class="product-card" data-category="y2k">
     <h3>Y2K Sonnenbrille</h3>
     <p>Schlank, shiny & super edgy – total im Hype!</p>
     <a href="https://amzn.to/43NnGzh" target="_blank">Zur Brille</a>
   </div>
+
   <div class="product-card" data-category="y2k">
     <h3>Y2K Schmuck</h3>
     <p>Glamour-Set für den ultimativen Throwback-Look.</p>
     <a href="https://amzn.to/4cPNbm9" target="_blank">Jetzt shoppen</a>
   </div>
-  <!-- Y2K Erweiterung -->
+
   <div class="product-card" data-category="y2k">
     <h3>Langarmshirt Y2K</h3>
     <p>Stretch, figurbetont & retro – dein Must-Have fürs Layering.</p>
     <a href="https://amzn.to/4lshpiZ" target="_blank">Jetzt shoppen</a>
   </div>
+
   <div class="product-card" data-category="y2k">
     <h3>Cargohose Y2K</h3>
     <p>Baggy, cool & mit Utility-Vibes – ein Klassiker des Y2K Styles.</p>
     <a href="https://amzn.to/4cx5goJ" target="_blank">Jetzt entdecken</a>
   </div>
+
   <div class="product-card" data-category="y2k">
     <h3>Vintage Sonnenbrille</h3>
     <p>Schmale Retro-Brille – genau wie in den 2000ern. Total edgy!</p>
     <a href="https://amzn.to/4jt0737" target="_blank">Zur Brille</a>
   </div>
+
   <div class="product-card" data-category="y2k">
     <h3>Umhängetasche Y2K</h3>
     <p>Klein, glänzend, stylisch – perfekt zur Parachute Pants.</p>
     <a href="https://amzn.to/4irO8Ck" target="_blank">Jetzt ansehen</a>
   </div>
+
   <div class="product-card" data-category="y2k">
     <h3>Silber Schmuckset Y2K</h3>
     <p>Chunky & shiny – Silberkette, Ring & Ohrringe im Set.</p>
     <a href="https://amzn.to/42f6gKE" target="_blank">Zum Set</a>
   </div>
+
   <div class="product-card" data-category="y2k">
     <h3>Mary Janes Y2K Schuhe</h3>
     <p>Plateau & verspielt – bringt total den Highschool-Vibe zurück.</p>
     <a href="https://amzn.to/42L8gKP" target="_blank">Jetzt entdecken</a>
   </div>
-  <!-- Casual -->
-  <div class="product-card" data-category="casual">
-    <h3>Sonnenbrille – Casual Look</h3>
-    <p>Schlicht, modern & zeitlos – perfekt für sonnige Alltagsmomente.</p>
-    <a href="https://amzn.to/4jEedz4" target="_blank">Jetzt ansehen</a>
+
+</div>
+<h2 id="y2k">💿 Y2K Style</h2>
+<div class="container">
+
+  <div class="product-card" data-category="y2k">
+    <h3>Parachute Pants Y2K</h3>
+    <p>Baggy & edgy – für den ultimativen Y2K-Vibe.</p>
+    <a href="https://amzn.to/43MxMjU" target="_blank">Jetzt ansehen</a>
   </div>
-  <div class="product-card" data-category="casual">
-    <h3>Handtasche – Casual</h3>
-    <p>Klassisch & dezent – passend für Arbeit, Uni & Freizeit.</p>
-    <a href="https://amzn.to/4lxiea3" target="_blank">Jetzt entdecken</a>
+
+  <div class="product-card" data-category="y2k">
+    <h3>Y2K Sneaker</h3>
+    <p>Klobiger 2000er-Style – der perfekte Retro-Vibe für jedes Outfit.</p>
+    <a href="https://amzn.to/4ih2B3U" target="_blank">Zum Sneaker</a>
   </div>
-  <div class="product-card" data-category="casual">
-    <h3>Leinenhose – Casual Chic</h3>
-    <p>Luftig & edel – ideal für warme Tage & minimalistisches Styling.</p>
-    <a href="https://amzn.to/43V8L65" target="_blank">Jetzt shoppen</a>
+
+  <div class="product-card" data-category="y2k">
+    <h3>Y2K Hoodie</h3>
+    <p>Futuristisch, oversized & cozy – absolut im Trend.</p>
+    <a href="https://amzn.to/42L9GF2" target="_blank">Jetzt entdecken</a>
   </div>
-  <div class="product-card" data-category="casual">
-    <h3>Riemchensandalen</h3>
-    <p>Leicht, luftig & bequem – deine neue Lieblingsbegleiterin im Sommer.</p>
-    <a href="https://amzn.to/3Y0YX70" target="_blank">Jetzt kaufen</a>
+
+  <div class="product-card" data-category="y2k">
+    <h3>Y2K Sonnenbrille</h3>
+    <p>Schlank, shiny & super edgy – total im Hype!</p>
+    <a href="https://amzn.to/43NnGzh" target="_blank">Zur Brille</a>
   </div>
-  <div class="product-card" data-category="casual">
-    <h3>Rollkragenpullover Blau</h3>
-    <p>Weich, warm & schick – ein Statement für den Alltag.</p>
-    <a href="https://amzn.to/4ik4wVm" target="_blank">Jetzt entdecken</a>
+
+  <div class="product-card" data-category="y2k">
+    <h3>Y2K Schmuck</h3>
+    <p>Glamour-Set für den ultimativen Throwback-Look.</p>
+    <a href="https://amzn.to/4cPNbm9" target="_blank">Jetzt shoppen</a>
   </div>
-    <!-- Gothic Style -->
+
+  <div class="product-card" data-category="y2k">
+    <h3>Langarmshirt Y2K</h3>
+    <p>Stretch, figurbetont & retro – dein Must-Have fürs Layering.</p>
+    <a href="https://amzn.to/4lshpiZ" target="_blank">Jetzt shoppen</a>
+  </div>
+
+  <div class="product-card" data-category="y2k">
+    <h3>Cargohose Y2K</h3>
+    <p>Baggy, cool & mit Utility-Vibes – ein Klassiker des Y2K Styles.</p>
+    <a href="https://amzn.to/4cx5goJ" target="_blank">Jetzt entdecken</a>
+  </div>
+
+  <div class="product-card" data-category="y2k">
+    <h3>Vintage Sonnenbrille</h3>
+    <p>Schmale Retro-Brille – genau wie in den 2000ern. Total edgy!</p>
+    <a href="https://amzn.to/4jt0737" target="_blank">Zur Brille</a>
+  </div>
+
+  <div class="product-card" data-category="y2k">
+    <h3>Umhängetasche Y2K</h3>
+    <p>Klein, glänzend, stylisch – perfekt zur Parachute Pants.</p>
+    <a href="https://amzn.to/4irO8Ck" target="_blank">Jetzt ansehen</a>
+  </div>
+
+  <div class="product-card" data-category="y2k">
+    <h3>Silber Schmuckset Y2K</h3>
+    <p>Chunky & shiny – Silberkette, Ring & Ohrringe im Set.</p>
+    <a href="https://amzn.to/42f6gKE" target="_blank">Zum Set</a>
+  </div>
+
+  <div class="product-card" data-category="y2k">
+    <h3>Mary Janes Y2K Schuhe</h3>
+    <p>Plateau & verspielt – bringt total den Highschool-Vibe zurück.</p>
+    <a href="https://amzn.to/42L8gKP" target="_blank">Jetzt entdecken</a>
+  </div>
+
+</div>
+<h2 id="gothic">🖤 Gothic Style</h2>
+<div class="container">
+
   <div class="product-card" data-category="gothic">
     <h3>Crystaltears Halskette – Gothic</h3>
     <p>Dunkel & mystisch – der perfekte Hingucker für dein Dark Aesthetic Outfit.</p>
     <a href="https://amzn.to/4jcIchq" target="_blank">Jetzt entdecken</a>
   </div>
+
   <div class="product-card" data-category="gothic">
     <h3>Stiefeletten mit Blockabsatz</h3>
     <p>Robust & stilvoll – ideal für düstere Looks mit Statement.</p>
     <a href="https://amzn.to/42KObnP" target="_blank">Jetzt ansehen</a>
   </div>
+
   <div class="product-card" data-category="gothic">
-    <h3>Spitzenhandschuhe – Gothic</h3>
+    <h3>Spitzenhandschuhe – Dark Glamour</h3>
     <p>Eleganz mit Mystery – für deinen düsteren Auftritt mit Klasse.</p>
     <a href="https://amzn.to/3EzmUeR" target="_blank">Zum Accessoire</a>
   </div>
+
   <div class="product-card" data-category="gothic">
     <h3>Midi Kleid – Gothic Romance</h3>
     <p>Spitze, Tiefe & Drama – ein Traum für Dark Queens.</p>
     <a href="https://amzn.to/4lyxwLM" target="_blank">Jetzt shoppen</a>
   </div>
-  <!-- Doll Look -->
+<h2 id="doll">🎀 Doll Look</h2>
+<div class="container">
+
   <div class="product-card" data-category="doll">
     <h3>Herztasche – Doll Look</h3>
     <p>Zuckersüß, glänzend & mit Herz – das It-Piece für alle Soft Girls.</p>
     <a href="https://amzn.to/4czXEC1" target="_blank">Jetzt shoppen</a>
   </div>
+
   <div class="product-card" data-category="doll">
     <h3>Haarklammern – Doll Look</h3>
     <p>Schmetterlinge, Herzchen & Glitzer – so cute wie dein Vibe.</p>
     <a href="https://amzn.to/4illvqe" target="_blank">Jetzt entdecken</a>
   </div>
+
   <div class="product-card" data-category="doll">
     <h3>Ballerinas – Doll Look</h3>
     <p>Mit Schleifchen & Satin – für deinen liebsten Girlcore-Moment.</p>
     <a href="https://amzn.to/4illwdM" target="_blank">Jetzt ansehen</a>
   </div>
+
   <div class="product-card" data-category="doll">
     <h3>Doll Rock</h3>
     <p>Rüschen, Tüll & Candy-Vibes – wie aus einem Manga entsprungen.</p>
     <a href="https://amzn.to/3Y2hNKO" target="_blank">Zum Rock</a>
   </div>
+
   <div class="product-card" data-category="doll">
     <h3>Puffärmel T-Shirt – Doll Look</h3>
     <p>Weich, feminin & verspielt – perfekt für Pastell-Outfits.</p>
     <a href="https://amzn.to/4lAcht0" target="_blank">Jetzt entdecken</a>
   </div>
-  <!-- Coastal Cowgirl -->
-  <div class="product-card" data-category="cowgirl">
-    <h3>Coastal Cowgirl Top</h3>
-    <p>Leicht & luftig – perfekt für Sommer, Sonne und Wild West Vibes.</p>
-    <a href="https://amzn.to/3EwcAEz" target="_blank">Jetzt shoppen</a>
-  </div>
-  <div class="product-card" data-category="cowgirl">
-    <h3>Coastal Cowgirl Rock</h3>
-    <p>Mit Spitze & Swing – ideal zum Tanzen auf Festivals & Strandpartys.</p>
-    <a href="https://amzn.to/4ijZU1j" target="_blank">Jetzt entdecken</a>
-  </div>
-  <div class="product-card" data-category="cowgirl">
-    <h3>Coastal Cowgirl Stiefel</h3>
-    <p>Chunky Absatz, Cowboy-Flair – robust & stylisch zugleich.</p>
-    <a href="https://amzn.to/44AVPTd" target="_blank">Jetzt ansehen</a>
-  </div>
-  <div class="product-card" data-category="cowgirl">
-    <h3>Coastal Cowgirl Hut</h3>
-    <p>Der Klassiker! Strohhut mit Western-Vibe & Beachfeeling.</p>
-    <a href="https://amzn.to/3Rqt97S" target="_blank">Zum Hut</a>
-  </div>
-  <div class="product-card" data-category="cowgirl">
-    <h3>Coastal Cowgirl Tasche</h3>
-    <p>Weich, Vintage, perfekt für dein Alltagsabenteuer im Wild West Style.</p>
-    <a href="https://amzn.to/4lEDrPw" target="_blank">Jetzt shoppen</a>
-  </div>
-  <!-- Ballerina Style -->
+
+</div>
+<h2 id="ballerina">🩰 Ballerina Style</h2>
+<div class="container">
+
   <div class="product-card" data-category="ballerina">
     <h3>Ballerina Style Strickjacke</h3>
     <p>Zartes Rosa, Wickeloptik & kuschelig – wie direkt aus dem Ballettsaal.</p>
     <a href="https://amzn.to/4lKKRkn" target="_blank">Jetzt entdecken</a>
   </div>
+
   <div class="product-card" data-category="ballerina">
     <h3>Ballerinas Rosa</h3>
     <p>Mit zarter Schleife – feminin, bequem & ein Must-Have für Girlies.</p>
     <a href="https://amzn.to/4cAV6Do" target="_blank">Jetzt ansehen</a>
   </div>
+
   <div class="product-card" data-category="ballerina">
     <h3>Ballerina Style Rock (Pink)</h3>
     <p>Tüll, Lagen & Tanzfeeling – für einen romantischen Look.</p>
     <a href="https://amzn.to/42mdZGQ" target="_blank">Jetzt shoppen</a>
   </div>
+
   <div class="product-card" data-category="ballerina">
     <h3>Ballerina Halskette</h3>
     <p>Herzanhänger mit Glanz – elegant, verspielt & absolut girly.</p>
     <a href="https://amzn.to/3Gbh83M" target="_blank">Zur Kette</a>
   </div>
-  <!-- All Black Chic -->
+
+</div>
+<h2 id="ballerina">🩰 Ballerina Style</h2>
+<div class="container">
+
+  <div class="product-card" data-category="ballerina">
+    <h3>Ballerina Style Strickjacke</h3>
+    <p>Zartes Rosa, Wickeloptik & kuschelig – wie direkt aus dem Ballettsaal.</p>
+    <a href="https://amzn.to/4lKKRkn" target="_blank">Jetzt entdecken</a>
+  </div>
+
+  <div class="product-card" data-category="ballerina">
+    <h3>Ballerinas Rosa</h3>
+    <p>Mit zarter Schleife – feminin, bequem & ein Must-Have für Girlies.</p>
+    <a href="https://amzn.to/4cAV6Do" target="_blank">Jetzt ansehen</a>
+  </div>
+
+  <div class="product-card" data-category="ballerina">
+    <h3>Ballerina Style Rock (Pink)</h3>
+    <p>Tüll, Lagen & Tanzfeeling – für einen romantischen Look.</p>
+    <a href="https://amzn.to/42mdZGQ" target="_blank">Jetzt shoppen</a>
+  </div>
+
+  <div class="product-card" data-category="ballerina">
+    <h3>Ballerina Halskette</h3>
+    <p>Herzanhänger mit Glanz – elegant, verspielt & absolut girly.</p>
+    <a href="https://amzn.to/3Gbh83M" target="_blank">Zur Kette</a>
+  </div>
+
+</div>
+<h2 id="blackchic">🖤 All Black Chic</h2>
+<div class="container">
+
   <div class="product-card" data-category="blackchic">
     <h3>All Black Chic Top</h3>
     <p>Schwarzes Slim-Fit Top mit stylischen Cutouts – minimal & stark.</p>
     <a href="https://amzn.to/4cBuylA" target="_blank">Jetzt shoppen</a>
   </div>
+
   <div class="product-card" data-category="blackchic">
     <h3>All Black Chic Rock</h3>
     <p>Schwarzer Minirock mit Struktur – classy, edgy & powerful.</p>
     <a href="https://amzn.to/4cAb6FK" target="_blank">Jetzt entdecken</a>
   </div>
+
   <div class="product-card" data-category="blackchic">
     <h3>Plateau Stiefel – All Black Chic</h3>
     <p>Bold & modern – diese Boots bringen Höhe & Haltung.</p>
     <a href="https://amzn.to/4lDbEip" target="_blank">Jetzt ansehen</a>
   </div>
+
   <div class="product-card" data-category="blackchic">
     <h3>Gürtel – All Black Chic</h3>
     <p>Glänzend, silberne Schnalle – perfekt zum Layern & Akzentuieren.</p>
     <a href="https://amzn.to/42Mmiee" target="_blank">Zum Gürtel</a>
   </div>
+
   <div class="product-card" data-category="blackchic">
     <h3>Silber Schmuck – All Black Chic</h3>
     <p>Bold, clean & cool – perfektes Accessoire für jedes Black Fit.</p>
     <a href="https://amzn.to/3EqnXOm" target="_blank">Zum Schmuck</a>
   </div>
+
   <div class="product-card" data-category="blackchic">
     <h3>Silber Tasche – All Black Chic</h3>
     <p>Shiny, elegant & clean – ein Statement auf jedem Event.</p>
     <a href="https://amzn.to/42C1cyN" target="_blank">Zur Tasche</a>
   </div>
-  <!-- French Chic -->
+
+</div>
+<h2 id="french">🇫🇷 French Chic</h2>
+<div class="container">
+
   <div class="product-card" data-category="french">
     <h3>French Chic Top</h3>
     <p>Fein gerippt, elegant & feminin – perfekt für Café & City.</p>
     <a href="https://amzn.to/42EtCID" target="_blank">Jetzt entdecken</a>
   </div>
+
   <div class="product-card" data-category="french">
     <h3>French Chic Hose</h3>
-    <p>High Waist & fließender Stoff – Classy mit Pariser Charme.</p>
+    <p>High Waist & fließender Stoff – classy mit Pariser Charme.</p>
     <a href="https://amzn.to/42MncHE" target="_blank">Jetzt ansehen</a>
   </div>
+
   <div class="product-card" data-category="french">
     <h3>French Chic Loafer</h3>
     <p>Glänzend & schlicht – Pariser Nonchalance für deine Füße.</p>
     <a href="https://amzn.to/42m20t1" target="_blank">Jetzt shoppen</a>
   </div>
+
   <div class="product-card" data-category="french">
     <h3>Satin-Gürtel – French Chic</h3>
     <p>Ein Hauch Luxus – perfekter Akzent für Blusen & Kleider.</p>
     <a href="https://amzn.to/4jCL7jl" target="_blank">Zum Gürtel</a>
   </div>
+
   <div class="product-card" data-category="french">
     <h3>Schwarze Handtasche – French Chic</h3>
     <p>Klassisch, kompakt & schick – passt zu jedem Outfit.</p>
     <a href="https://amzn.to/3RUT5sb" target="_blank">Zur Tasche</a>
   </div>
+
   <div class="product-card" data-category="french">
     <h3>Schwarze Sonnenbrille – French Chic</h3>
     <p>Schmale Form & viel Attitude – à la Parisienne.</p>
     <a href="https://amzn.to/4jIzx6s" target="_blank">Zur Brille</a>
   </div>
 
+</div>
+<h2 id="casual">🧢 Casual Style</h2>
+<div class="container">
 
-</div> <!-- Ende von .container -->
+  <div class="product-card" data-category="casual">
+    <h3>Sonnenbrille – Casual Look</h3>
+    <p>Schlicht, modern & zeitlos – perfekt für sonnige Alltagsmomente.</p>
+    <a href="https://amzn.to/4jEedz4" target="_blank">Jetzt ansehen</a>
+  </div>
 
+  <div class="product-card" data-category="casual">
+    <h3>Handtasche – Casual</h3>
+    <p>Klassisch & dezent – passend für Arbeit, Uni & Freizeit.</p>
+    <a href="https://amzn.to/4lxiea3" target="_blank">Jetzt entdecken</a>
+  </div>
+
+  <div class="product-card" data-category="casual">
+    <h3>Leinenhose – Casual Chic</h3>
+    <p>Luftig & edel – ideal für warme Tage & minimalistisches Styling.</p>
+    <a href="https://amzn.to/43V8L65" target="_blank">Jetzt shoppen</a>
+  </div>
+
+  <div class="product-card" data-category="casual">
+    <h3>Riemchensandalen</h3>
+    <p>Leicht, luftig & bequem – deine neue Lieblingsbegleiterin im Sommer.</p>
+    <a href="https://amzn.to/3Y0YX70" target="_blank">Jetzt kaufen</a>
+  </div>
+
+  <div class="product-card" data-category="casual">
+    <h3>Rollkragenpullover Blau</h3>
+    <p>Weich, warm & schick – ein Statement für den Alltag.</p>
+    <a href="https://amzn.to/4ik4wVm" target="_blank">Jetzt entdecken</a>
+  </div>
+
+</div>
 <footer>
-  <p><strong>Impressum:</strong> Elias Keskin | E-Mail: likeafish61@gmail.com | Adresse auf Anfrage<br>
-  Diese Website enthält Affiliate-Links. Es gelten die AGB von Amazon.</p>
+  <p>
+    <strong>Impressum:</strong> Elias Keskin<br>
+    E-Mail: <a href="mailto:likeafish61@gmail.com">likeafish61@gmail.com</a><br>
+    Adresse auf Anfrage<br>
+    <br>
+    Diese Website enthält Affiliate-Links. Es gelten die AGB von Amazon.
+  </p>
 </footer>
 
 </body>
 </html>
-
